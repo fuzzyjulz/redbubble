@@ -1,0 +1,10 @@
+-content_for(:title, "Works List")
+-content_for(:nav) do
+  -Make.all.each_with_index do |make, index|
+    -if index > 0
+      |
+    =link_to make.name, make_path(make)
+
+-Work.all[0..9].each do |work|
+  =image_tag work.thumbnail
+  

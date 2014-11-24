@@ -1,0 +1,17 @@
+!!! 5
+<!DOCTYPE html>
+%html
+  %head
+    %title
+      =yield :title
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+%body
+  %header
+    %h1
+      =yield :title
+    %nav
+      =yield :nav
+  #content{class: ("controller-#{controller.controller_name} action-#{controller.action_name}")}
+    =yield

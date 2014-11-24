@@ -1,0 +1,8 @@
+-content_for(:title, @model.name)
+-content_for(:nav) do
+  %p=link_to "<< Back", root_path
+  %p=link_to "<< Back to #{@model.make.name}", make_path(@model.make)
+
+-@model.works[0..9].each do |work|
+  =image_tag work.thumbnail
+  
