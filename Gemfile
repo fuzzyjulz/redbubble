@@ -9,7 +9,7 @@ gem 'turbolinks'                            # Turbolinks makes following links i
 gem 'jbuilder', '~> 2.0'                    # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'haml-rails'                            #Haml-rails provides Haml generators for Rails 4. It also enables Haml as the templating engine for you
 gem 'nokogiri'                              #XML parsing library
-
+gem 'tzinfo-data', platforms: [:mingw, :mswin] #TZInfo required for windows :-(
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'                    # bundle exec rake doc:rails generates the API under doc/api.
