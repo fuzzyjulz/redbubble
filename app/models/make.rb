@@ -1,6 +1,7 @@
+#A Camera make used to capture a piece of artwork. 
+#  Makes are extracted from the works xml, but could be stored in a database and use ActiveRecord to
+#  be extracted at a later date
 class Make
-  include BaseDataInteractions
-  
   attr_reader :name, :id
   
   def to_param
@@ -32,6 +33,7 @@ class Make
       map {|make| Make.new(get_id_for_name(make), make)}
   end
   
+  #For a given make name, the id used by the system is returned
   def self.get_id_for_name(make_name)
     make_name.parameterize
   end

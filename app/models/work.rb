@@ -1,3 +1,4 @@
+#A piece of artwork. All data is lazily loaded from the xml.
 class Work
   def initialize(work_xml)
     @work_xml = work_xml

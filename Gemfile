@@ -16,8 +16,7 @@ group :doc do
 end
 
 group :development do
-  gem 'rspec'                                         #For unit tests
-  gem 'rspec-rails', '~> 2.0'                         #For Unit Tests
+  gem 'cucumber-rails', require: false                #For unit tests
   gem 'spring'                                        # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'pry'                                           #pry is a command line debugger It allows debugging in the console and looking up help for commands
   gem 'pry-debugger'                                  #Adds step, next, finish, and continue commands and breakpoints to Pry using debugger.

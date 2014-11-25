@@ -1,6 +1,7 @@
+#A Camera model used to capture a piece of artwork. 
+#  Models are extracted from the works xml, but could be stored in a database and use ActiveRecord to
+#  be extracted at a later date
 class Model
-  include BaseDataInteractions
-  
   attr_reader :id, :name, :make_id
   
   def initialize(id, name, make_id)
@@ -37,13 +38,14 @@ class Model
       make_model_name = "#{make_name}## #{model_name}"
       
       next if model_names.include?(make_model_name)
+
       model_names << make_model_name
-      
       models << Model.new(get_id_for_name(model_name), model.text, Make.get_id_for_name(make_name))
     end
     models
   end
 
+  #For a given model name, the id used by the system is returned
   def self.get_id_for_name(model_name)
     model_name.parameterize
   end

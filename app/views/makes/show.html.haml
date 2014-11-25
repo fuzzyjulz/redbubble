@@ -1,6 +1,6 @@
 -content_for(:title, @make.name)
 -content_for(:nav) do
-  %p=link_to "<< Back", root_path
+  %p=link_to "<< Back", base_path
   %p
     -@make.models.each_with_index do |model, index|
       -if index > 0
@@ -8,5 +8,6 @@
       =link_to model.name, model_path(@make, model)
 
 -@make.works[0..9].each do |work|
-  =image_tag work.thumbnail
+  .workImage
+    =image_tag work.thumbnail
   

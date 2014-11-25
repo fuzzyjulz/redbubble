@@ -4,9 +4,16 @@
   %head
     %title
       =yield :title
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
+      
+    -#These would probably be used in a prod environment over an inline style. However the test provides this template.
+    -# =stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    -# =javascript_include_tag 'application', 'data-turbolinks-track' => true
+    -# =csrf_meta_tags
+    
+    :css
+      nav {
+        margin: 10px;
+      }
 %body
   %header
     %h1
