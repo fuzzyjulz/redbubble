@@ -6,6 +6,7 @@ module MakeHelpers
   def open_make_page(make_name)
     open_root_page
     within ("nav") { click_on make_name }
+    puts "Current Page: "+page.current_url
   end
 end
 
