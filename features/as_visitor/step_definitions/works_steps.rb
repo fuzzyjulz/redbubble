@@ -5,6 +5,6 @@ end
 
 Then(/^I expect to see the given works images$/) do |table|
   each_list_item(table) do |work_image_url|
-    assert(all(".workImage img[@src='#{work_image_url}']").size > 0, "Couldn't find '#{work_image_url}' on the page.")
+    assert(all("img.workImage[@src='#{work_image_url}']").size > 0, "Couldn't find '#{work_image_url}' on the page.")
   end
 end

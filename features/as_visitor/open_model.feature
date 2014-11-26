@@ -18,5 +18,5 @@ Scenario: Works are the works for the camera make
 Scenario: Navigation contains all the relevant items
   When I open the model "DMC-FZ30" for the make "Panasonic"
   Then I expect to see only the given items in the navigation
-    |<< Back|
+    |<< Home|
     |<< Back to Panasonic|

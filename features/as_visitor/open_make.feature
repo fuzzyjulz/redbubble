@@ -21,5 +21,5 @@ Scenario: Works are the works for the camera make
 Scenario: Navigation contains all the relevant items
   When I open the make "Leica"
   Then I expect to see only the given items in the navigation
-    |<< Back|
+    |<< Home|
     |D-LUX 3|

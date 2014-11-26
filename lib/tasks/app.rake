@@ -2,7 +2,7 @@ namespace :app do
   desc "Generates static pages"
   task :static, [:input_file, :output_dir] => :environment do |object, args|
     app = ActionDispatch::Integration::Session.new(Rails.application)
-    ApplicationHelper.source_data_file = args[:input_file] if args[:input_file]
+    ApplicationHelper.source_data_file = args[:input_file] || "data/works.xml"
     @output_dir = File.join ([Rails.root, args[:output_dir] || "public" ])
     puts "Outputting to: #{@output_dir}"
  

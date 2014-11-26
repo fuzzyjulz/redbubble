@@ -1,11 +1,8 @@
 -content_for(:title, "Works List")
 -content_for(:nav) do
-  -Make.all.each_with_index do |make, index|
-    -if index > 0
-      |
+  =render layout: "_shared/nav_item_display", locals: {nav_items: Make.all} do |make|
     =link_to make.name, make_path(make)
 
 -Work.all[0..9].each do |work|
-  .workImage
-    =image_tag work.thumbnail
+  =image_tag work.thumbnail, class: "workImage"
   
