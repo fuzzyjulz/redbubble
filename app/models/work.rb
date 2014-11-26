@@ -4,6 +4,10 @@ class Work
     @work_xml = work_xml
   end
   
+  def id
+    @work_xml.xpath("id").text.to_i
+  end
+
   def thumbnail
     @work_xml.xpath("urls/url[@type = 'small']").text
   end

@@ -6,7 +6,7 @@
 
 require 'cucumber/rails'
 require 'pry'
-ApplicationHelper.source_data_file = "features/testdata/works.xml"
+ApplicationHelper.source_data_file = "data/works.xml"
 
 
 # Capybara defaults to CSS3 selectors rather than XPath.
