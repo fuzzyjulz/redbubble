@@ -7,7 +7,8 @@ bundle install
 ```
 
 There are two modes of operation:
-1: It may be run as a standard rails web app by just starting...
+
+1. It may be run as a standard rails web app by just starting...
 
 ```
   rails s
@@ -15,7 +16,7 @@ There are two modes of operation:
 In this mode the pages are dynamically generated, this makes it easy to load a new datafile and develop as with any other
 rails application. 
 
-2: This mode generates the static pages, you may either do this using the defaults, which are to use the included
+2. This mode generates the static pages, you may either do this using the defaults, which are to use the included
 xml and the public directory as the output path. This allows the cucumber tests to run on the actual static pages, rather
 than the dynamic pages allowing the output to be fully tested.
 ```
