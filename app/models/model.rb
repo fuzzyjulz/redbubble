@@ -10,18 +10,22 @@ class Model
     @make_id = make_id
   end
   
+  #Used to generate the rails path
   def to_param
       id
   end
   
+  #Lists all works for the Model
   def works
     Work.all.select {|work| work.model_id == id}
   end
 
+  #Returns the make for this Model, if any
   def make
     Make.find(make_id)
   end
 
+  #Finds the Model for the given make_id and model_id
   def self.find(make_id, model_id)
     all.each do |item|
       return item if item.make_id == make_id && item.id == model_id
@@ -29,6 +33,7 @@ class Model
     return nil
   end
 
+  #Lists all Models in the datastore
   def self.all
     model_names = []
     models = []

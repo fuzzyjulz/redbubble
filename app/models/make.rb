@@ -4,6 +4,7 @@
 class Make
   attr_reader :name, :id
   
+  #Used to generate the rails path
   def to_param
       id
   end
@@ -12,15 +13,18 @@ class Make
     @id = id
     @name = make
   end
-  
+
+  #Lists all Works for this Make  
   def works
     Work.all.select {|work| work.make_id == id}
   end
   
+  #Lists all Camera Models for this Make
   def models
     Model.all.select {|model| model.make_id == id}
   end
   
+  #Find the make by it's id in the datastore
   def self.find(id)
     all.each do |item|
       return item if item.id == id
@@ -28,6 +32,7 @@ class Make
     return nil
   end
 
+  #Lists all Makes in the datastore
   def self.all
     ApplicationHelper.works_xml.xpath("/works/work/exif/make").map{|make| make.text.titleize}.uniq.
       map {|make| Make.new(get_id_for_name(make), make)}
